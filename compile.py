@@ -36,8 +36,8 @@ def create_directory(dir):
 
 ########################## Output Directory Selection ########################## 
  
-output_dir = "htdocs/"
-
+#output_dir = "htdocs/"
+output_dir = "docs/"
 print "Resetting output dir..."
 while os.path.exists(output_dir):
   try:
@@ -943,8 +943,10 @@ for version in major_versions:
   print "Wrote " + str(written) + " commands for " + version
 
 with zipfile.ZipFile('docs.gl.zip', 'w', compression=zipfile.ZIP_DEFLATED) as docs_gl_zip:
-  for dirname, _, files in os.walk('htdocs'):
+  #for dirname, _, files in os.walk('htdocs'):
+  for dirname, _, files in os.walk('docs'):
     for filename in files:
       docs_gl_zip.write(os.path.join(dirname, filename))
 
-shutil.move("docs.gl.zip", "htdocs/") 
+#shutil.move("docs.gl.zip", "htdocs/")
+shutil.move("docs.gl.zip", "docs/") 

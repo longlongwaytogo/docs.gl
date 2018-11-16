@@ -1,5 +1,5 @@
 @echo off
 
-\Python27\python.exe compile.py
+python.exe compile.py
 
 pause
